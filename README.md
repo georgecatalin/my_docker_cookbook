@@ -6,6 +6,7 @@ This repository contains a curated collection of **Docker resources, practical e
 ## Useful links
 ### General Introduction
 * https://www.youtube.com/watch?v=3c-iBn73dDE
+* https://www.udemy.com/course/learn-docker
 ### About me
 * George Calin
 * george.calin [at] gmail.com
