@@ -1,5 +1,7 @@
 # MyDocker cookbook
-This repository contains a curated collection of **Docker resources, practical examples** and **troubleshooting notes** for **learning or refreshing** your knowledge in Docker containerization
+This repository contains a curated collection of **Docker resources, practical examples** and **troubleshooting notes** for **learning or refreshing** your knowledge in Docker containerization.
+
+<img src="docker.png" alt="docker Logo" width="300">
 
 ## Useful links
 ### General Introduction
