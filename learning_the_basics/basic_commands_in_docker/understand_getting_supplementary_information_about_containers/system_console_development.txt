@@ -1,0 +1,417 @@
+georgeca@georgeca-VirtualBox:~/Documents/my_docker_cookbook/learning_the_basics/basic_commands_in_docker$ docker ps -a 
+CONTAINER ID   IMAGE     COMMAND   CREATED             STATUS                         PORTS     NAMES
+6cc18631a7a5   fedora    "bash"    About an hour ago   Exited (0) About an hour ago             flamboyant_vaughan
+georgeca@georgeca-VirtualBox:~/Documents/my_docker_cookbook/learning_the_basics/basic_commands_in_docker$ docker inspect 6cc
+[
+    {
+        "Id": "6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb",
+        "Created": "2025-06-27T09:01:22.09526618Z",
+        "Path": "bash",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-06-27T09:01:22.942397737Z",
+            "FinishedAt": "2025-06-27T09:02:57.287229092Z"
+        },
+        "Image": "sha256:38200c0ab6a57a8676bc2cda899d968a4d166a1290b8a94a9c8bc06e35161ee5",
+        "ResolvConfPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/hostname",
+        "HostsPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/hosts",
+        "LogPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb-json.log",
+        "Name": "/flamboyant_vaughan",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                53,
+                185
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb",
+                "LowerDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269-init/diff:/var/lib/docker/overlay2/913fe0445bdec483e301ab9cf29d5e832fb257af7ae60f100268e3c928924c0c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "6cc18631a7a5",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DISTTAG=f42container",
+                "FGC=f42",
+                "FBR=f42"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "fedora",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "Clement Verna <cverna@fedoraproject.org>"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8ae838448fde2a47860b684264b0784aa50fb7940edf35abfaa10357de2ed09e",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+georgeca@georgeca-VirtualBox:~/Documents/my_docker_cookbook/learning_the_basics/basic_commands_in_docker$ docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED             STATUS                         PORTS     NAMES
+6cc18631a7a5   fedora    "bash"    About an hour ago   Exited (0) About an hour ago             flamboyant_vaughan
+georgeca@georgeca-VirtualBox:~/Documents/my_docker_cookbook/learning_the_basics/basic_commands_in_docker$ docker inspect flamboyant_vaughan
+[
+    {
+        "Id": "6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb",
+        "Created": "2025-06-27T09:01:22.09526618Z",
+        "Path": "bash",
+        "Args": [],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-06-27T09:01:22.942397737Z",
+            "FinishedAt": "2025-06-27T09:02:57.287229092Z"
+        },
+        "Image": "sha256:38200c0ab6a57a8676bc2cda899d968a4d166a1290b8a94a9c8bc06e35161ee5",
+        "ResolvConfPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/hostname",
+        "HostsPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/hosts",
+        "LogPath": "/var/lib/docker/containers/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb/6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb-json.log",
+        "Name": "/flamboyant_vaughan",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                53,
+                185
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/interrupts",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "ID": "6cc18631a7a59d67b146abfe44d6aeb827a7b1eb88fb0d6a42b3a38d4cf9b9bb",
+                "LowerDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269-init/diff:/var/lib/docker/overlay2/913fe0445bdec483e301ab9cf29d5e832fb257af7ae60f100268e3c928924c0c/diff",
+                "MergedDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/merged",
+                "UpperDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/diff",
+                "WorkDir": "/var/lib/docker/overlay2/a0d443bb6e037042d754cc72074b7ee133a1f9321b55b7ddc8af6f9ab0c90269/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "6cc18631a7a5",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": true,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": true,
+            "OpenStdin": true,
+            "StdinOnce": true,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "DISTTAG=f42container",
+                "FGC=f42",
+                "FBR=f42"
+            ],
+            "Cmd": [
+                "bash"
+            ],
+            "Image": "fedora",
+            "Volumes": null,
+            "WorkingDir": "/",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "Clement Verna <cverna@fedoraproject.org>"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "",
+            "SandboxKey": "",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "",
+                    "DriverOpts": null,
+                    "GwPriority": 0,
+                    "NetworkID": "8ae838448fde2a47860b684264b0784aa50fb7940edf35abfaa10357de2ed09e",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+

@@ -1,0 +1,253 @@
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+redis         latest    c09c2832ba40   3 weeks ago    128MB
+redis         7.4.4     2379f7f02dd7   3 weeks ago    117MB
+hello-world   latest    74cc54e27dc4   5 months ago   10.1kB
+alpine        3.12.3    389fef711851   4 years ago    5.58MB
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps -a
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                      PORTS                                         NAMES
+48246c58c865   redis:7.4.4     "docker-entrypoint.s…"   18 minutes ago   Up 18 minutes               0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+aaf84d3315cb   redis:7.4.4     "docker-entrypoint.s…"   18 minutes ago   Exited (0) 18 minutes ago                                                 modest_banach
+83988af1afa9   redis:latest    "docker-entrypoint.s…"   18 minutes ago   Up 18 minutes               0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+e5f3f0f03e20   redis:latest    "docker-entrypoint.s…"   19 minutes ago   Exited (0) 18 minutes ago                                                 relaxed_thompson
+6b8af166b745   redis:7.4.4     "docker-entrypoint.s…"   20 minutes ago   Exited (0) 19 minutes ago                                                 dreamy_johnson
+57540cf17e19   redis:7.4.4     "docker-entrypoint.s…"   22 minutes ago   Exited (0) 21 minutes ago                                                 pedantic_hellman
+804bcb82de8f   redis:latest    "docker-entrypoint.s…"   22 minutes ago   Exited (0) 19 minutes ago                                                 elastic_chatelet
+fcbe0a76f1be   redis:7.4.4     "docker-entrypoint.s…"   22 minutes ago   Exited (1) 22 minutes ago                                                 zen_beaver
+bd27fe863e27   redis:latest    "docker-entrypoint.s…"   22 minutes ago   Exited (1) 22 minutes ago                                                 intelligent_hofstadter
+4bf2d7a03b95   redis:latest    "docker-entrypoint.s…"   23 minutes ago   Exited (0) 23 minutes ago                                                 compassionate_goldwasser
+7696bf41696a   alpine:3.12.3   "/bin/sh"                21 hours ago     Exited (0) 21 hours ago                                                   blissful_kirch
+847a1059c7bf   hello-world     "/hello"                 23 hours ago     Exited (0) 23 hours ago                                                   infallible_dirac
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+48246c58c865   redis:7.4.4    "docker-entrypoint.s…"   18 minutes ago   Up 18 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+83988af1afa9   redis:latest   "docker-entrypoint.s…"   18 minutes ago   Up 18 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker logs tender_sinoussi 
+1:C 25 Jun 2025 07:41:28.129 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 25 Jun 2025 07:41:28.129 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 25 Jun 2025 07:41:28.129 * Redis version=7.4.4, bits=64, commit=00000000, modified=0, pid=1, just started
+1:C 25 Jun 2025 07:41:28.129 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+1:M 25 Jun 2025 07:41:28.129 * monotonic clock: POSIX clock_gettime
+1:M 25 Jun 2025 07:41:28.130 * Running mode=standalone, port=6379.
+1:M 25 Jun 2025 07:41:28.130 * Server initialized
+1:M 25 Jun 2025 07:41:28.130 * Ready to accept connections tcp
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker help
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  bake        Build from a file
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/home/georgeca/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/georgeca/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/georgeca/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/georgeca/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+48246c58c865   redis:7.4.4    "docker-entrypoint.s…"   19 minutes ago   Up 19 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+83988af1afa9   redis:latest   "docker-entrypoint.s…"   19 minutes ago   Up 19 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker logs 83988af1afa9
+Starting Redis Server
+1:C 25 Jun 2025 07:40:54.006 # WARNING Memory overcommit must be enabled! Without it, a background save or replication may fail under low memory condition. Being disabled, it can also cause failures without low memory condition, see https://github.com/jemalloc/jemalloc/issues/1328. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+1:C 25 Jun 2025 07:40:54.007 * oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
+1:C 25 Jun 2025 07:40:54.007 * Redis version=8.0.2, bits=64, commit=00000000, modified=1, pid=1, just started
+1:C 25 Jun 2025 07:40:54.007 * Configuration loaded
+1:M 25 Jun 2025 07:40:54.007 * monotonic clock: POSIX clock_gettime
+1:M 25 Jun 2025 07:40:54.008 * Running mode=standalone, port=6379.
+1:M 25 Jun 2025 07:40:54.008 * <bf> RedisBloom version 8.0.1 (Git=unknown)
+1:M 25 Jun 2025 07:40:54.008 * <bf> Registering configuration options: [
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ bf-error-rate       :      0.01 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ bf-initial-size     :       100 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ bf-expansion-factor :         2 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ cf-bucket-size      :         2 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ cf-initial-size     :      1024 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ cf-max-iterations   :        20 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ cf-expansion-factor :         1 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> 	{ cf-max-expansions   :        32 }
+1:M 25 Jun 2025 07:40:54.008 * <bf> ]
+1:M 25 Jun 2025 07:40:54.008 * Module 'bf' loaded from /usr/local/lib/redis/modules//redisbloom.so
+1:M 25 Jun 2025 07:40:54.009 * <search> Redis version found by RedisSearch : 8.0.2 - oss
+1:M 25 Jun 2025 07:40:54.009 * <search> RediSearch version 8.0.1 (Git=5688fcc)
+1:M 25 Jun 2025 07:40:54.009 * <search> Low level api version 1 initialized successfully
+1:M 25 Jun 2025 07:40:54.009 * <search> gc: ON, prefix min length: 2, min word length to stem: 4, prefix max expansions: 200, query timeout (ms): 500, timeout policy: return, cursor read size: 1000, cursor max idle (ms): 300000, max doctable size: 1000000, max number of search results:  1000000, 
+1:M 25 Jun 2025 07:40:54.009 * <search> Initialized thread pools!
+1:M 25 Jun 2025 07:40:54.009 * <search> Disabled workers threadpool of size 0
+1:M 25 Jun 2025 07:40:54.009 * <search> Subscribe to config changes
+1:M 25 Jun 2025 07:40:54.009 * <search> Enabled role change notification
+1:M 25 Jun 2025 07:40:54.009 * <search> Cluster configuration: AUTO partitions, type: 0, coordinator timeout: 0ms
+1:M 25 Jun 2025 07:40:54.009 * <search> Register write commands
+1:M 25 Jun 2025 07:40:54.009 * Module 'search' loaded from /usr/local/lib/redis/modules//redisearch.so
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> RedisTimeSeries version 80001, git_sha=577bfa8b5909e7ee572f0b651399be8303dc6641
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> Redis version found by RedisTimeSeries : 8.0.2 - oss
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> Registering configuration options: [
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> 	{ ts-compaction-policy   :              }
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> 	{ ts-num-threads         :            3 }
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> 	{ ts-retention-policy    :            0 }
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> 	{ ts-duplicate-policy    :        block }
+1:M 25 Jun 2025 07:40:54.009 * <timeseries> 	{ ts-chunk-size-bytes    :         4096 }
+1:M 25 Jun 2025 07:40:54.010 * <timeseries> 	{ ts-encoding            :   compressed }
+1:M 25 Jun 2025 07:40:54.010 * <timeseries> 	{ ts-ignore-max-time-diff:            0 }
+1:M 25 Jun 2025 07:40:54.010 * <timeseries> 	{ ts-ignore-max-val-diff :     0.000000 }
+1:M 25 Jun 2025 07:40:54.010 * <timeseries> ]
+1:M 25 Jun 2025 07:40:54.010 * <timeseries> Detected redis oss
+1:M 25 Jun 2025 07:40:54.010 * Module 'timeseries' loaded from /usr/local/lib/redis/modules//redistimeseries.so
+1:M 25 Jun 2025 07:40:54.010 * <ReJSON> Created new data type 'ReJSON-RL'
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> version: 80001 git sha: unknown branch: unknown
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Exported RedisJSON_V1 API
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Exported RedisJSON_V2 API
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Exported RedisJSON_V3 API
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Exported RedisJSON_V4 API
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Exported RedisJSON_V5 API
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Enabled diskless replication
+1:M 25 Jun 2025 07:40:54.011 * <ReJSON> Initialized shared string cache, thread safe: false.
+1:M 25 Jun 2025 07:40:54.011 * Module 'ReJSON' loaded from /usr/local/lib/redis/modules//rejson.so
+1:M 25 Jun 2025 07:40:54.011 * <search> Acquired RedisJSON_V5 API
+1:M 25 Jun 2025 07:40:54.011 * Server initialized
+1:M 25 Jun 2025 07:40:54.011 * Ready to accept connections tcp
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+redis         latest    c09c2832ba40   3 weeks ago    128MB
+redis         7.4.4     2379f7f02dd7   3 weeks ago    117MB
+hello-world   latest    74cc54e27dc4   5 months ago   10.1kB
+alpine        3.12.3    389fef711851   4 years ago    5.58MB
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker run -d --name georges_container alpine:3.12.3 
+ec81a10237bb956d0321b6d081b9a6020408182a946971a6264864a361e227a3
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+48246c58c865   redis:7.4.4    "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+83988af1afa9   redis:latest   "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps -a
+CONTAINER ID   IMAGE           COMMAND                  CREATED          STATUS                      PORTS                                         NAMES
+ec81a10237bb   alpine:3.12.3   "/bin/sh"                41 seconds ago   Exited (0) 40 seconds ago                                                 georges_container
+48246c58c865   redis:7.4.4     "docker-entrypoint.s…"   20 minutes ago   Up 20 minutes               0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+aaf84d3315cb   redis:7.4.4     "docker-entrypoint.s…"   21 minutes ago   Exited (0) 21 minutes ago                                                 modest_banach
+83988af1afa9   redis:latest    "docker-entrypoint.s…"   21 minutes ago   Up 21 minutes               0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+e5f3f0f03e20   redis:latest    "docker-entrypoint.s…"   21 minutes ago   Exited (0) 21 minutes ago                                                 relaxed_thompson
+6b8af166b745   redis:7.4.4     "docker-entrypoint.s…"   22 minutes ago   Exited (0) 22 minutes ago                                                 dreamy_johnson
+57540cf17e19   redis:7.4.4     "docker-entrypoint.s…"   24 minutes ago   Exited (0) 23 minutes ago                                                 pedantic_hellman
+804bcb82de8f   redis:latest    "docker-entrypoint.s…"   24 minutes ago   Exited (0) 22 minutes ago                                                 elastic_chatelet
+fcbe0a76f1be   redis:7.4.4     "docker-entrypoint.s…"   25 minutes ago   Exited (1) 25 minutes ago                                                 zen_beaver
+bd27fe863e27   redis:latest    "docker-entrypoint.s…"   25 minutes ago   Exited (1) 25 minutes ago                                                 intelligent_hofstadter
+4bf2d7a03b95   redis:latest    "docker-entrypoint.s…"   26 minutes ago   Exited (0) 25 minutes ago                                                 compassionate_goldwasser
+7696bf41696a   alpine:3.12.3   "/bin/sh"                21 hours ago     Exited (0) 21 hours ago                                                   blissful_kirch
+847a1059c7bf   hello-world     "/hello"                 23 hours ago     Exited (0) 23 hours ago                                                   infallible_dirac
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker run -d -p7000:6379 --name pavel_container redis:latest 
+a40d5afb9589f306a7a04c946f5406d0ba0d0fb51dcdf87fe7f3fd7e67399822
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+a40d5afb9589   redis:latest   "docker-entrypoint.s…"   5 seconds ago    Up 4 seconds    0.0.0.0:7000->6379/tcp, [::]:7000->6379/tcp   pavel_container
+48246c58c865   redis:7.4.4    "docker-entrypoint.s…"   22 minutes ago   Up 22 minutes   0.0.0.0:6001->6379/tcp, [::]:6001->6379/tcp   tender_sinoussi
+83988af1afa9   redis:latest   "docker-entrypoint.s…"   22 minutes ago   Up 22 minutes   0.0.0.0:6000->6379/tcp, [::]:6000->6379/tcp   quirky_hugle
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker exec -it pavel_container bash
+root@a40d5afb9589:/data# ls -lh
+total 0
+root@a40d5afb9589:/data# cd /
+root@a40d5afb9589:/# 
+root@a40d5afb9589:/# ls
+bin  boot  data  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+root@a40d5afb9589:/# cd home/
+root@a40d5afb9589:/home# ls
+root@a40d5afb9589:/home# env
+HOSTNAME=a40d5afb9589
+REDIS_DOWNLOAD_SHA=caf3c0069f06fc84c5153bd2a348b204c578de80490c73857bee01d9b5d7401f
+PWD=/home
+HOME=/root
+TERM=xterm
+REDIS_DOWNLOAD_URL=https://github.com/redis/redis/archive/refs/tags/8.0.2.tar.gz
+SHLVL=1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+_=/usr/bin/env
+OLDPWD=/
+root@a40d5afb9589:/home# exit
+exit
+georgeca@georgeca-VirtualBox:~/docker_sandbox$ docker exec -it quirky_hugle /bin/bash
+root@83988af1afa9:/data# cd ~
+root@83988af1afa9:~# ls
+root@83988af1afa9:~# env
+HOSTNAME=83988af1afa9
+REDIS_DOWNLOAD_SHA=caf3c0069f06fc84c5153bd2a348b204c578de80490c73857bee01d9b5d7401f
+PWD=/root
+HOME=/root
+TERM=xterm
+REDIS_DOWNLOAD_URL=https://github.com/redis/redis/archive/refs/tags/8.0.2.tar.gz
+SHLVL=1
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+OLDPWD=/data
+_=/usr/bin/env
+root@83988af1afa9:~# date
+Wed Jun 25 08:05:42 UTC 2025
+root@83988af1afa9:~# exit
+exit
+
